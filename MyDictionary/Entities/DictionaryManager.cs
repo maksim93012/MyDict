@@ -170,7 +170,9 @@ namespace MyDictionary
             int index = 0;
             foreach (Item i in repository.Items)
             {
-                res[index]= $"{i.English}\t\t{i.Russian}\t\tЗапросов: {i.Asked}\tОтветов: {i.Answered}\r\n";
+                res[index] = string.Concat(i.English.PadRight(16),"\t",
+                                            i.Russian.PadRight(16),"\t",
+                                            $"Запросов: {i.Asked}\t\tОтветов: {i.Answered}\r\n");
                 index++;
             }
             return res.OrderBy(x=>x).ToArray();

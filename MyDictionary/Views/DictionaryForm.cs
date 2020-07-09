@@ -15,7 +15,8 @@ namespace MyDictionary
         public DictionaryForm(DictionaryManager manager)
         {
             InitializeComponent();
-            foreach (string i in manager.GetWordsInfo())
+            string[] words = manager.GetWordsInfo();
+            foreach (string i in words)
             {
                 textBox1.Text += i;
             }
