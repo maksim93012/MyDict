@@ -15,6 +15,8 @@ namespace MyDictionary
         bool rus_eng;
         bool IsReplay = false;
 
+        int min_ask = 10;
+
         public int ItemsCount => repository.Items.Count();
         public string FilePath => repository.FilePath;
         public int AskedToDay => askedToDay;
@@ -43,7 +45,7 @@ namespace MyDictionary
             get
             {
                 return repository.Items
-         .Where(x => x.Asked >= 15 && x.Answered / (x.Asked + 1.0) >= 0.75)
+         .Where(x => x.Asked >= min_ask && x.Answered / (x.Asked + 1.0) >= 0.75)
          .Count();
             }
         }
@@ -127,7 +129,7 @@ namespace MyDictionary
         {
             quest = null;
             rus_eng = r_e;
-            quest = repository.RandomItem(x => x.Asked < 15 || x.Answered / (x.Asked + 1.0) < 0.75);
+            quest = repository.RandomItem(x => x.Asked < min_ask || x.Answered / (x.Asked + 1.0) < 0.75);
             if (quest == null) { CancelQuestion(); return null; }
             askedToDay++;
             if (rus_eng)
@@ -170,9 +172,7 @@ namespace MyDictionary
             int index = 0;
             foreach (Item i in repository.Items)
             {
-                res[index] = string.Concat(i.English.PadRight(16),"\t",
-                                            i.Russian.PadRight(16),"\t",
-                                            $"Запросов: {i.Asked}\t\tОтветов: {i.Answered}\r\n");
+                res[index] = $"{i.English, -16}\t{i.Russian, -16}\tЗапросов: {i.Asked}\t\tОтветов: {i.Answered}\r\n";
                 index++;
             }
             return res.OrderBy(x=>x).ToArray();
