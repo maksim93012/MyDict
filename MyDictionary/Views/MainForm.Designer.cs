@@ -83,21 +83,21 @@
             // новыйСловарьToolStripMenuItem
             // 
             this.новыйСловарьToolStripMenuItem.Name = "новыйСловарьToolStripMenuItem";
-            this.новыйСловарьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.новыйСловарьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.новыйСловарьToolStripMenuItem.Text = "Создать";
             this.новыйСловарьToolStripMenuItem.Click += new System.EventHandler(this.новыйСловарьToolStripMenuItem_Click);
             // 
             // загрузитьСловарьToolStripMenuItem
             // 
             this.загрузитьСловарьToolStripMenuItem.Name = "загрузитьСловарьToolStripMenuItem";
-            this.загрузитьСловарьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьСловарьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.загрузитьСловарьToolStripMenuItem.Text = "Открыть";
             this.загрузитьСловарьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьСловарьToolStripMenuItem_Click);
             // 
             // удалитьСловарьToolStripMenuItem
             // 
             this.удалитьСловарьToolStripMenuItem.Name = "удалитьСловарьToolStripMenuItem";
-            this.удалитьСловарьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьСловарьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.удалитьСловарьToolStripMenuItem.Text = "Удалить";
             this.удалитьСловарьToolStripMenuItem.Click += new System.EventHandler(this.удалитьСловарьToolStripMenuItem_Click);
             // 
@@ -115,28 +115,28 @@
             // добавитьСловоToolStripMenuItem
             // 
             this.добавитьСловоToolStripMenuItem.Name = "добавитьСловоToolStripMenuItem";
-            this.добавитьСловоToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.добавитьСловоToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.добавитьСловоToolStripMenuItem.Text = "Добавить слово";
             this.добавитьСловоToolStripMenuItem.Click += new System.EventHandler(this.добавитьСловоToolStripMenuItem_Click);
             // 
             // удалитьСловоToolStripMenuItem
             // 
             this.удалитьСловоToolStripMenuItem.Name = "удалитьСловоToolStripMenuItem";
-            this.удалитьСловоToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.удалитьСловоToolStripMenuItem.Text = "Удалить слово";
+            this.удалитьСловоToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.удалитьСловоToolStripMenuItem.Text = " Управление словом";
             this.удалитьСловоToolStripMenuItem.Click += new System.EventHandler(this.удалитьСловоToolStripMenuItem_Click);
             // 
             // сбросСчетчиковToolStripMenuItem
             // 
             this.сбросСчетчиковToolStripMenuItem.Name = "сбросСчетчиковToolStripMenuItem";
-            this.сбросСчетчиковToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.сбросСчетчиковToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.сбросСчетчиковToolStripMenuItem.Text = "Сброс счетчиков";
             this.сбросСчетчиковToolStripMenuItem.Click += new System.EventHandler(this.сбросСчетчиковToolStripMenuItem_Click);
             // 
             // очиститьToolStripMenuItem
             // 
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
-            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.очиститьToolStripMenuItem.Text = "Очистить ";
             this.очиститьToolStripMenuItem.Click += new System.EventHandler(this.очиститьToolStripMenuItem_Click);
             // 

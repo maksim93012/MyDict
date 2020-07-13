@@ -11,10 +11,10 @@ namespace MyDictionary
     {
         string English { get; }
         string Russian { get; }
-        int Answered { get;}
-        int Asked { get;}
+        int Points { get; set; }
 
         void Reset();
+
         bool Answer(string eng, string rus, bool rec_as_answered);
     }
 }

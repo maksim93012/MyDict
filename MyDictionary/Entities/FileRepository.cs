@@ -75,7 +75,7 @@ namespace MyDictionary
                 {
                     while (true)
                     {
-                        Item item = new Item(reader.ReadString(), reader.ReadString(), reader.ReadInt32(), reader.ReadInt32());
+                        Item item = new Item(reader.ReadString(), reader.ReadString(), reader.ReadInt32());
                         items.Add(item);
                     }
                 }
@@ -91,8 +91,14 @@ namespace MyDictionary
 
         public IItem RandomItem(Func<IItem, bool> predicate)
         {
-            IEnumerable<IItem> temp = items.Where(predicate);
+            IEnumerable<IItem> temp = items;
             int c = temp.Count();
+            if (rnd.Next(0, 15) != 0)
+            {
+                temp = items.Where(predicate);
+                c = temp.Count();
+                if (c >= 30) c = 30;
+            }
             if (c < 1) return null;
             return temp.ElementAt(rnd.Next(0, c));
         }
@@ -106,8 +112,7 @@ namespace MyDictionary
                     {
                     writer.Write(item.English);
                     writer.Write(item.Russian);
-                    writer.Write(item.Answered);
-                    writer.Write(item.Asked);
+                    writer.Write(item.Points);
                     }
             }
         }

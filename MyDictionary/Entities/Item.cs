@@ -10,14 +10,12 @@ namespace MyDictionary
     {
         string eng;
         string rus;
-        int answered;
-        int asked;
-        public string English { get { return eng; } }
-        public string Russian { get { return rus; } }
-        public int Answered { get { return answered; } }
-        public int Asked { get { return asked; } }
+        int points = 0;
+        public string English => eng;
+        public string Russian => rus;
+        public int Points { get { return points; } set { points = value < 0 ? 0 : value; } }
 
-        public Item(string eng, string rus, int answered = 0, int asked = 0)
+        public Item(string eng, string rus, int points = 0)
         {
             this.eng = eng.Trim().ToLower();
             this.rus = rus.Trim().ToLower();
@@ -36,29 +34,28 @@ namespace MyDictionary
                     throw new ArgumentException("В строке <russian> присутствуют неверные символы: "+this.rus);
                 }
             }
-            this.answered = answered>=0?answered:0;
-            this.asked = asked>=0?asked:0;
+            Points = points>=0?points:0;
         }
 
         public bool Answer(string eng, string rus, bool rec_as_answered)
         {
-            asked++;
             if(English == eng.Trim().ToLower() && Russian==rus.Trim().ToLower())
             {
-                if(rec_as_answered)
-                answered++;
+                if (rec_as_answered)
+                    Points+=2;
                 return true;
             }
             else
             {
+                if(Points>0)
+                Points-=3;
                 return false;
             }
         }
 
         public void Reset()
         {
-            asked = 0;
-            answered = 0;
+            Points = 0;
         }
     }
 }
