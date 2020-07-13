@@ -34,11 +34,13 @@ namespace MyDictionary
         private void button2_Click(object sender, EventArgs e)
         {
             manager.ResetStatOfWord(textBox1.Text);
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             manager.MarkAsStudied(textBox1.Text);
+            this.Close();
         }
     }
 }
